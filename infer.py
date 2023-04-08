@@ -6,7 +6,7 @@ from pycoral.adapters import common
 from pycoral.adapters import classify
 from PIL import Image
 
-model_file = '/home/kyllo/projects/safety-vision/model/model_edgetpu.tflite'
+model_file = 'model/model_edgetpu.tflite'
 label_file = 'model/labels.txt'
 image_file = 'test.jpg'
 

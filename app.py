@@ -9,6 +9,10 @@ def index():
     # rendering webpage
     return render_template('index.html')
 
+def infer():
+    ''' carry out inference on a frame'''
+    pass
+
 def gen(camera):
     while True:
         #get camera frame

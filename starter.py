@@ -28,7 +28,7 @@ def main():
         cv2_im_rgb = cv2.cvtColor(cv2_im, cv2.COLOR_BGR2RGB)
         cv2_im_rgb = cv2.resize(cv2_im_rgb, inference_size)
         run_inference(interpreter, cv2_im_rgb.tobytes())
-        objs = get_objects(interpreter, threshold)[top_k]
+        objs = get_objects(interpreter, threshold)[:top_k]
         cv2_im = append_objs_to_img(cv2_im, inference_size, objs, labels)
 
         cv2.imshow('frame', cv2_im)

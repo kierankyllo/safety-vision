@@ -13,7 +13,7 @@ class Camera(object):
         #extracting frames
         ret, frame = self.video.read()
 
-        frame=cv2.resize(frame,None,fx=0.6,fy=0.6, interpolation=cv2.INTER_AREA) 
+        frame=cv2.resize(frame,None,fx=1,fy=1, interpolation=cv2.INTER_AREA) 
 
         return frame
 

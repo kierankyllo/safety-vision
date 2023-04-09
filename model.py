@@ -6,7 +6,7 @@ from pycoral.utils.edgetpu import make_interpreter
 from pycoral.utils.edgetpu import run_inference
 
 
-class Model():
+class Model(object):
     def __init__(self, model_file, label_file, top_k, threshold):
         self.interpreter = make_interpreter(model_file)
         self.interpreter.allocate_tensors()

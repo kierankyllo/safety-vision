@@ -8,7 +8,6 @@ label_file = 'model/labels.txt'
 top_k = 3
 threshold = 0.1
 
-
 app = Flask(__name__)
 
 @app.route('/')
@@ -20,7 +19,6 @@ def gen(camera, model):
     while True:
         #get camera frame and pass for inference
         frame = camera.get_frame()
-
         frame = model.detect(frame)
 
         yield (b'--frame\r\n'

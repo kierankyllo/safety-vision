@@ -5,6 +5,8 @@ from pycoral.utils.dataset import read_label_file
 from pycoral.utils.edgetpu import make_interpreter
 from pycoral.utils.edgetpu import run_inference
 
+# needs to output to other than monitor, imshow doesnt work
+
 def main():
 
     model_file = 'model/model_edgetpu.tflite'
@@ -31,12 +33,15 @@ def main():
         objs = get_objects(interpreter, threshold)[:top_k]
         cv2_im = append_objs_to_img(cv2_im, inference_size, objs, labels)
 
-        cv2.imshow('frame', cv2_im)
+        # send frame to 
+    
+
+        # cv2.imshow('frame', cv2_im)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
     cap.release()
-    cv2.destroyAllWindows()
+    # cv2.destroyAllWindows()
 
 def append_objs_to_img(cv2_im, inference_size, objs, labels):
     height, width, channels = cv2_im.shape

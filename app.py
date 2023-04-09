@@ -19,7 +19,7 @@ def gen(camera, model):
     while True:
         #get camera frame and pass for inference
         frame = camera.get_frame()
-        frame = model.detect(frame)
+        frame, objects = model.detect(frame)
 
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')

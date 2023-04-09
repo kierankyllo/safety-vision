@@ -24,7 +24,7 @@ class Model(object):
         objs = get_objects(self.interpreter, self.threshold)[:self.top_k]
         cv2_im = self.__append_objs_to_img(cv2_im, self.inference_size, objs, self.labels)
         ret, jpeg = cv2.imencode('.jpg', cv2_im)
-        return jpeg.tobytes()
+        return jpeg.tobytes(), objs
             
 
     def __append_objs_to_img(self, cv2_im, inference_size, objs, labels):

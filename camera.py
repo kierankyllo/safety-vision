@@ -12,8 +12,7 @@ class Camera(object):
     def get_frame(self):
         #extracting frames
         ret, frame = self.video.read()
-        frame=cv2.resize(frame,None,fx=0.6,fy=0.6, interpolation=cv2.INTER_AREA)                    
-  
-        # encode OpenCV raw frame to jpg and displaying it
-        ret, jpeg = cv2.imencode('.jpg', frame)
-        return jpeg.tobytes()
+        frame = cv2.resize(frame,None,fx=1,fy=1, interpolation=cv2.INTER_AREA) 
+        return frame
+
+
